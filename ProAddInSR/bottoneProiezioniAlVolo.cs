@@ -33,7 +33,7 @@ namespace ProAddInSR
 
                 CIMMap cIMMap = funzioniVariabiliGlobali.FunzioniGlobali.RicavaInfoMappaCIMMapClass(mappa).Result;
 
-                CIMDatumTransform[] trasfDatum = cIMMap.DatumTransforms; // DatumTransform fornisce una lista fornisce
+                CIMDatumTransform[] trasfDatum = cIMMap.DatumTransforms; // DatumTransform fornisce un array fornisce
                                                                          // una matrice unidimensionale di oggetti appartenenti alla classe CIMDatumTransform.
 
                 string elencoProiezioniAlVolo = String.Empty;
