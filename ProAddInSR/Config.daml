@@ -1,0 +1,57 @@
+﻿<ArcGIS defaultAssembly="ProAddInSR.dll" defaultNamespace="ProAddInSR" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{6f14028b-b725-461d-a726-0782366320bf}" version="1.1" desktopVersion="2.5">
+    <Name>Pro AddIn Info Sistema di Riferimento</Name>
+    <Description>Info utili sul Sistema di Riferimento</Description>
+    <Image>Images\AddInDesktop32.png</Image>
+    <Author>Giancarlo Messina (GiancaGIS)</Author>
+    <Company>GiancaGIS</Company>
+    <Date>20/03/2020</Date>
+    <Subject>Content</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="ProAddInSR_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="ProAddInSR_Tab1" caption="AddIn GiancaGIS SR">
+          <group refID="ProAddInSR_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ProAddInSR_Group1" caption="AddIn Sistema di Riferimento" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <menu refID="ProAddInSR_Menu1" size="middle" />
+          <comboBox refID="ProAddInSR_ComboBoxFeatureLayer" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ProAddInSR_Menu1_Items_ButtonInfoBasiche" caption="Mostra info basiche SR" className="Menu1_button1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Info Basiche SR">
+            Cliccando qui si possono avere delle informazioni base sul Sistema di Riferimento settato per la Mappa attiva<disabledText /></tooltip>
+        </button>
+        <button id="ProAddInSR_Menu1_Items_ButtonInfoAvanzate" caption="Mostra info avanzate SR" className="Menu1_button2" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonGreen32.png">
+          <tooltip heading="Info Avanzate SR">
+            Cliccando qui si possono avere delle informazioni avanzate sul Sistema di Riferimento settato per la Mappa attiva<disabledText /></tooltip>
+        </button>
+        <comboBox id="ProAddInSR_ComboBoxFeatureLayer" caption="Feature Layer:" className="ComboBoxFeatureLayer" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
+          <tooltip heading="Tooltip Heading">Scegli Feature Layer<disabledText /></tooltip>
+        </comboBox>
+        <button id="ProAddInSR_bottoneProiezioniAlVolo" caption="Mostra proiezioni al volo" className="bottoneProiezioniAlVolo" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Mostra proiezioni al volo">
+            Cliccando qui si possono avere delle informazioni sulle proiezioni al volo attive per la Mappa attiva<disabledText /></tooltip>
+        </button>
+      </controls>
+      <menus>
+        <menu id="ProAddInSR_Menu1" caption="Informazioni SR" smallImage="GenericButtonGreen16.png" largeImage="GenericButtonGreen32.png">
+          <button refID="ProAddInSR_Menu1_Items_ButtonInfoBasiche" />
+          <button refID="ProAddInSR_Menu1_Items_ButtonInfoAvanzate" />
+          <button refID="ProAddInSR_bottoneProiezioniAlVolo" />
+        </menu>
+      </menus>
+    </insertModule>
+  </modules>
+</ArcGIS>
